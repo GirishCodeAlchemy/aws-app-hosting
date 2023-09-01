@@ -20,6 +20,7 @@ module "lambda" {
   lambda_handler            = each.value.lambda_handler
   lambda_description        = each.value.lambda_description
   managed_policy_arns       = each.value.managed_policy_arns
+  lambda_has_inline_policy  = try(each.value.lambda_has_inline_policy, false)
   lambda_inline_policy      = try(each.value.lambda_inline_policy, null)
   schedule_time_trigger     = try(each.value.schedule_time_trigger, null)
   aws_lambda_permission     = try(each.value.aws_lambda_permission, [])
