@@ -1,9 +1,9 @@
 module "config" {
-  source = "git::https://github.com/girish-devops-project/terraform-config.git"
+  source = "git@github.com:girish-devops-project/terraform-config.git"
 }
 
 module "lambda" {
-  source = "git::https://github.com/girish-devops-project/terraform-lambda-module.git"
+  source = "git@github.com:girish-devops-project/terraform-lambda-module.git"
 
   providers = {
     aws = aws
