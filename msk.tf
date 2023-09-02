@@ -16,7 +16,7 @@ resource "aws_msk_cluster" "demo-msk" {
   }
   configuration_info {
     arn      = aws_msk_configuration.demo-msk-configuration.arn
-    revision = aws_msk_configuration.demo-msk-configuration.revision
+    revision = aws_msk_configuration.demo-msk-configuration.latest_revision
   }
 
   tags = {
