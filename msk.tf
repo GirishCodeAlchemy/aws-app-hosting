@@ -4,7 +4,7 @@ resource "aws_msk_cluster" "demo-msk" {
   number_of_broker_nodes = 2
   broker_node_group_info {
     instance_type  = "kafka.t3.small"                        # Choose an appropriate instance type
-    client_subnets = distinct(data.aws_subnets.selected.ids) # Specify your VPC subnets
+    client_subnets = distinct(data.aws_subnets.client_subnets.ids) # Specify your VPC subnets
   }
 
   encryption_info {
