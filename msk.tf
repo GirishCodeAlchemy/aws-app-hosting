@@ -6,6 +6,7 @@ resource "aws_msk_cluster" "demo-msk" {
     instance_type   = "kafka.t3.small" # Choose an appropriate instance type
     ebs_volume_size = 50
     client_subnets  = distinct(data.aws_subnets.client_subnets.ids) # Specify your VPC subnets
+    security_groups = data.aws_security_groups.default-sg
   }
 
   encryption_info {

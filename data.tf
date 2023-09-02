@@ -14,3 +14,16 @@ data "aws_subnets" "client_subnets" {
     ]
   }
 }
+
+data "aws_security_groups" "default-sg" {
+  filter {
+    name   = "vpc-id"
+    values = [local.vpc_id]
+  }
+  filter {
+    name = "tag:Name"
+    values = [
+      "default-sg"
+    ]
+  }
+}
