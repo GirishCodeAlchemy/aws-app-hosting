@@ -39,15 +39,6 @@ PROPERTIES
 
 }
 
-resource "aws_msk_topic" "demo-topic" {
-  name               = "demo-topic"
-  cluster_arn        = aws_msk_cluster.my_cluster.arn
-  retention_ms       = 604800000
-  replication_factor = 1
-  partition_count    = 2
-  depends_on         = [aws_msk_cluster.demo-msk]
-}
-
 output "zookeeper_connect_string" {
   value = aws_msk_cluster.demo-msk.zookeeper_connect_string
 }
