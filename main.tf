@@ -30,3 +30,22 @@ module "lambda" {
   architectures              = try(each.value.architectures, ["x86_64"])
   sg_rules                   = try(each.value.sg_rules, [])
 }
+
+module "ec2" {
+
+  source = "git@github.com:girish-devops-project/terraform-ec2-module.git"
+
+  for_each = module.config.ec2_configmap
+
+  resource_name_prefix = local.resource_name_prefix
+  ami                  = each.value.ami
+  instance_type        = each.value.instance_type
+  key_name             = each.value.key_name
+  subnet_id            = each.value.subnet_id
+  vpc_id               = each.value.vpc_id
+  ec2_name             = each.key
+  sg_rules             = each.value.sg_rules
+  user_data_path       = try(each.value.user_data_path, null)
+  ebs_size             = try(each.value.ebs_size, null)
+  root_volume_size     = try(each.value.root_volume_size, null)
+}
