@@ -61,6 +61,12 @@ module "api_gateway" {
   managed_policy_arns       = each.value.managed_policy_arns
   api_gateway_inline_policy = try(each.value.api_gateway_inline_policy, null)
   uri                       = each.value.uri
+  path_part                 = each.value.path_part
+  region                    = each.value.region
+  account_id                = each.value.account_id
+  integration_type          = each.value.integration_type
+  lambda_function           = each.value.lambda_function
+  gateway_method            = each.value.gateway_method
   stage_name                = module.config.environment_config_map.environment
   request_parameters        = try(each.value.request_parameters, null)
   request_templates         = try(each.value.request_templates, null)
