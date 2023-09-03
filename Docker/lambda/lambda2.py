@@ -4,9 +4,16 @@ print("Loading function")
 
 
 def lambda_handler(event, context):
-    print(f"Recieved Event Message : {json.dumps(event, indent=2)}")
-    return {
-        "status": "success",
-        "msg": f"Received  message: {json.dumps(event)}",
-        "status_code": "200",
+    print(f"Recieved Event Message : {json.dumps(event)}")
+
+    response = {
+        "statusCode": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps(
+            {
+                "message": f"Received  message: {event.get('body')}",
+            }
+        ),
     }
+    print(f"final respose : {response}")
+    return response
