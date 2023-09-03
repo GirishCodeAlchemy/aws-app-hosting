@@ -9,10 +9,10 @@ if ! command -v wget &> /dev/null; then
 fi
 
 # Specify the URL of the raw file on GitHub
-GITHUB_RAW_URL="https://raw.githubusercontent.com/girish-devops-project/aws-app-hosting/main/kafka-topic/create_topics.py?token=GHSAT0AAAAAACHBAYUTLE3MNPKYJ6X7RJUCZHUZ2VQ"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/create_topics.py"
 
 # Destination path on the EC2 instance
-DESTINATION_PATH="/home/ec2-user/"
+DESTINATION_PATH="/home/ec2-user"
 
 # Use wget to download the file
 wget -O "$DESTINATION_PATH/create_topic.py" "$GITHUB_RAW_URL"
