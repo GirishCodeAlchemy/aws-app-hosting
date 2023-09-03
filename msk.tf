@@ -69,13 +69,12 @@ resource "aws_security_group" "msk" {
 locals {
   msk_sg_rules = [
     {
-      description              = "Ingress SSH port for EC2"
       cidr_blocks              = ["0.0.0.0/0"]
-      from_port                = "22"
-      protocol                 = "tcp"
+      from_port                = 0
+      protocol                 = -1
       self                     = null
       source_security_group_id = null
-      to_port                  = "22"
+      to_port                  = 0
       type                     = "ingress"
       prefix_list_ids          = null
       ipv6_cidr_blocks         = null
