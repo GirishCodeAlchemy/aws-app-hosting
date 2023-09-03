@@ -15,11 +15,11 @@ except ImportError:
     subprocess.call(["pip3", "install", "kafka-python"])
     from kafka.admin import KafkaAdminClient, NewTopic
 
-
+token = "g54cr3"
 kafka_servers = [
-    "b-1.demomskcluster.x5mzw0.c2.kafka.us-east-2.amazonaws.com",
-    "b-2.demomskcluster.x5mzw0.c2.kafka.us-east-2.amazonaws.com",
-    "b-3.demomskcluster.x5mzw0.c2.kafka.us-east-2.amazonaws.com",
+    f"b-1.demomskcluster.{token}.c2.kafka.us-east-2.amazonaws.com",
+    f"b-2.demomskcluster.{token}.kafka.us-east-2.amazonaws.com",
+    f"b-3.demomskcluster.{token}.kafka.us-east-2.amazonaws.com",
 ]
 
 
