@@ -66,4 +66,6 @@ module "api_gateway" {
   request_templates         = try(each.value.request_templates, null)
   passthrough_behavior      = each.value.passthrough_behavior
 
+  depends_on = [module.lambda]
+
 }
