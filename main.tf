@@ -77,9 +77,9 @@ module "api_gateway" {
 }
 
 
-resource "aws_lambda_event_source_mapping" "event_trigger_lambda" {
-  event_source_arn = module.api_gateway["demo-api"].api_arn
-  batch_size       = 1
-  function_name    = "arn:aws:lambda:${local.region}:${local.account_id}:function:${local.resource_name_prefix}-lambda-demo-lambda" //module.lambda[0].arn
-  depends_on       = [module.lambda]
-}
+# resource "aws_lambda_event_source_mapping" "event_trigger_lambda" {
+#   event_source_arn = module.api_gateway["demo-api"].api_arn
+#   batch_size       = 1
+#   function_name    = "arn:aws:lambda:${local.region}:${local.account_id}:function:${local.resource_name_prefix}-lambda-demo-lambda" //module.lambda[0].arn
+#   depends_on       = [module.lambda]
+# }
