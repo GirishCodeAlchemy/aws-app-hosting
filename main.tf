@@ -49,3 +49,21 @@ module "ec2" {
   ebs_size             = try(each.value.ebs_size, null)
   root_volume_size     = try(each.value.root_volume_size, null)
 }
+
+module "api_gateway" {
+
+  source = "git@github.com:girish-devops-project/terraform-apigateway-module.git"
+
+  for_each = module.config.apigateway_configmap
+
+  resource_name_prefix      = local.resource_name_prefix
+  api_name                  = each.key
+  managed_policy_arns       = each.value.managed_policy_arns
+  api_gateway_inline_policy = try(each.value.api_gateway_inline_policy, null)
+  uri                       = each.value.uri
+  stage_name                = module.config.environment_config_map.environment
+  request_parameters        = try(each.value.request_parameters, null)
+  request_templates         = try(each.value.request_templates, null)
+  passthrough_behavior      = each.value.passthrough_behavior
+
+}
