@@ -9,13 +9,15 @@ if ! command -v wget &> /dev/null; then
 fi
 
 # Specify the URL of the raw file on GitHub
-GITHUB_RAW_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/create_topics.py"
+create_topic_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/create_topics.py"
+kafka_consumer_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/kafka_consumer.py"
 
 # Destination path on the EC2 instance
 DESTINATION_PATH="/home/ec2-user"
 
 # Use wget to download the file
-wget -O "$DESTINATION_PATH/create_topic.py" "$GITHUB_RAW_URL"
+wget -O "$DESTINATION_PATH/create_topic.py" "$create_topic_URL"
+wget -O "$DESTINATION_PATH/kafka_consumer.py" "$kafka_consumer_URL"
 
 # Check if the download was successful
 if [ $? -eq 0 ]; then

@@ -1,14 +1,15 @@
 import json
+import os
 
 from kafka import KafkaProducer
 
 print("Loading function")
 
-token = "g54cr3"
+token = os.getenv("BROKER_TOKEN", default="g54cr3")
 kafka_servers = [
     f"b-1.demomskcluster.{token}.c2.kafka.us-east-2.amazonaws.com",
-    f"b-2.demomskcluster.{token}.kafka.us-east-2.amazonaws.com",
-    f"b-3.demomskcluster.{token}.kafka.us-east-2.amazonaws.com",
+    f"b-2.demomskcluster.{token}.c2.kafka.us-east-2.amazonaws.com",
+    f"b-3.demomskcluster.{token}.c2.kafka.us-east-2.amazonaws.com",
 ]
 
 
