@@ -29,3 +29,4 @@ API Gateway --> lambda --> Msk --> ec2
  <img width="1121" alt="image" src="https://github.com/girish-devops-project/aws-app-hosting/assets/143807663/79587286-063f-478b-8373-25106adab2f9">
 
  
+![image](https://github.com/girish-devops-project/aws-app-hosting/assets/143807663/333dbbeb-3a8b-4e51-b512-65fdb5831ae0)
