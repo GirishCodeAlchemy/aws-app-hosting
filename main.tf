@@ -1,9 +1,9 @@
 module "config" {
-  source = "git@github.com:girish-devops-project/terraform-config.git"
+  source = "git@github.com:GirishCodeAlchemy/terraform-config.git"
 }
 
 module "lambda" {
-  source = "git@github.com:girish-devops-project/terraform-lambda-module.git"
+  source = "git@github.com:GirishCodeAlchemy/terraform-lambda-module.git"
 
   for_each = module.config.lambda_configmap
 
@@ -33,7 +33,7 @@ module "lambda" {
 
 module "ec2" {
 
-  source = "git@github.com:girish-devops-project/terraform-ec2-module.git"
+  source = "git@github.com:GirishCodeAlchemy/terraform-ec2-module.git"
 
   for_each = module.config.ec2_configmap
 
@@ -52,7 +52,7 @@ module "ec2" {
 
 module "api_gateway" {
 
-  source = "git@github.com:girish-devops-project/terraform-apigateway-module.git"
+  source = "git@github.com:GirishCodeAlchemy/terraform-apigateway-module.git"
 
   for_each = module.config.apigateway_configmap
 

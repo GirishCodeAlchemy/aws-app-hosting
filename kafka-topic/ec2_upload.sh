@@ -9,8 +9,8 @@ if ! command -v wget &> /dev/null; then
 fi
 
 # Specify the URL of the raw file on GitHub
-create_topic_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/create_topics.py"
-kafka_consumer_URL="https://raw.githubusercontent.com/girish-devops-project/upload-files/main/kafka_consumer.py"
+create_topic_URL="https://raw.githubusercontent.com/GirishCodeAlchemy/upload-files/main/create_topics.py"
+kafka_consumer_URL="https://raw.githubusercontent.com/GirishCodeAlchemy/upload-files/main/kafka_consumer.py"
 
 # Destination path on the EC2 instance
 DESTINATION_PATH="/home/ec2-user"
