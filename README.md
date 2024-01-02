@@ -11,7 +11,7 @@ API Gateway --> lambda --> Msk --> ec2
 
 # Flow diagram
 
-![Alt Text](./flow-diagram.gif)
+![Alt Text](./assets/flow-diagram.gif)
 
 # Terraform Cloud
 
