@@ -1,6 +1,11 @@
 # aws-app-hosting
 
-Hosting application in AWS
+<p align="center">
+  <img src="https://github.com/GirishCodeAlchemy/aws-app-hosting/assets/143807663/e9fdbab5-cbdb-43b6-8a73-d2535e1cf5c9" width="600" alt="Spark etl">  
+</p>
+
+
+## Hosting application in AWS
 
 - Lambda
 - Ec2
